@@ -1,0 +1,27 @@
+<div class="person clearfix">
+  <h3 class="name"><%= link_to person.name, person_path(person) %></h3>
+
+  <div class="avatar">
+    <p><%= get_avatar(person) %></p>
+    <p><%= link_to "edit", edit_person_path(person) %> | <%= link_to "delete", person_path(person), :confirm => "Are you sure you want to delete " + person.name + "?", :method => :delete %></p>
+  </div>
+
+  <div class="information">
+
+    <p class="title-and-company"><%= title_and_company(person) %></p>
+    <p class="emails"><%= person.email %></p>
+
+    <%- unless person.phones.empty? -%>
+    <ul class="phones">
+      <%- person.phones.each do |phone| -%>
+      <li><%= phone_number_and_label(phone) %></li>
+      <%- end -%>
+    </ul>
+    <%- end -%>
+
+  </div>
+
+  <div class="timestamp">
+    <p>Created on <%= person.created_at.strftime("%B %d, %Y") %><%= (" and last updated on " + person.updated_at.strftime("%B %d, %Y")) unless person.updated_at.blank? or person.updated_at == person.created_at %></p>
+  </div>
+</div>

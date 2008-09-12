@@ -1,0 +1,5 @@
+<%- if @people.empty? -%>
+  <p>There are currently no records to display</p>
+<%- else -%>
+  <%= render :partial => 'shared/person', :collection => @people %>
+<%- end -%>

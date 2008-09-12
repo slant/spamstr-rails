@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+  <head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <title><%= controller.controller_name.humanize %> | Spamstr (Rails edition)</title>
+    <%= stylesheet_link_tag 'default' %>
+  </head>
+
+  <body>
+    <div id="container">
+
+      <div id="header">
+        <h1>Spamstr</h1>
+
+        <div id="nav" class="clearfix">
+          <ul>
+            <li><%= link_to 'List People', '/', :class => ('current' if (controller.controller_name == 'people' and controller.action_name == 'index')) %></li>
+            <li><%= link_to 'Add a Person', new_person_path, :class => ('current' if (controller.controller_name == 'people' and controller.action_name == 'new')) %></li>
+          </ul>
+        </div>
+      </div>
+  <% if !flash.empty? %>
+    <% flash.keys.each do |msgtype| %>
+      <p class="flash_<%= msgtype.to_s %>"><%= flash[msgtype] %></p>
+    <% end %>
+  <% end %>
+
+      <div id="content">
+<%= yield %>
+      </div>
+
+      <div id="footer">
+        
+      </div>
+
+    </div>
+  </body>
+
+</html>

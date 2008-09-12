@@ -1,0 +1,25 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  first_name: Ryan
+  last_name: Cross
+  email: rcross@gmail.com
+  company_url: http://sadmonkey.net
+  company: SadMonkey.net
+  title: That Guy
+
+two:
+  first_name: Jay
+  last_name: Graves
+  email: jay@skabber.com
+  company_url: http://bardiver.com/
+  company: Bar Diver
+  title: Owner
+
+three:
+  first_name: Ryan
+  last_name: Cross
+  email: rcross@cylenceweb.com
+  company_url: http://cylenceweb.com
+  company: Cylence Web Design
+  title: Owner

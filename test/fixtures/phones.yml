@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+<%
+  p1 = Person.find(:first, :conditions => ["first_name = ? and last_name = ? and company = ?", "Ryan", "Cross", "Cylence Web Design"])
+%>
+<% test = "7195551212" %>
+
+one:
+  number: <%= test %>
+  label: home
+  person_id: <%= p1.id %>
+
+two:
+  number: MyString
+  label: MyString
+  person_id: 1
