@@ -44,7 +44,7 @@ class PeopleController < ApplicationController
 
     respond_to do |format|
       if @person.save
-        flash[:notice] = 'Person was successfully created.'
+        flash[:notice] = 'Person was successfully created'
         format.html { redirect_to(@person) }
         format.xml  { render :xml => @person, :status => :created, :location => @person }
       else
@@ -61,7 +61,7 @@ class PeopleController < ApplicationController
 
     respond_to do |format|
       if @person.update_attributes(params[:person])
-        flash[:notice] = 'Person was successfully updated.'
+        flash[:notice] = 'Person was successfully updated'
         format.html { redirect_to(@person) }
         format.xml  { head :ok }
       else
@@ -76,7 +76,7 @@ class PeopleController < ApplicationController
   def destroy
     @person = Person.find(params[:id])
     @person.destroy
-    flash[:notice] = "That person was succesfully deleted"
+    flash[:notice] = 'Person was succesfully deleted'
 
     respond_to do |format|
       format.html { redirect_to(people_url) }

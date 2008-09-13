@@ -2,7 +2,7 @@
   <h3 class="name"><%= link_to person.name, person_path(person) %></h3>
 
   <div class="avatar">
-    <p><%= get_avatar(person) %></p>
+    <p><%= link_to get_avatar(person), person_path(person) %></p>
     <p><%= link_to "edit", edit_person_path(person) %> | <%= link_to "delete", person_path(person), :confirm => "Are you sure you want to delete " + person.name + "?", :method => :delete %></p>
   </div>
 
