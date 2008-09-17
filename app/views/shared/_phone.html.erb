@@ -1,0 +1,17 @@
+<div class="task">
+<%- fields_for "person[phone_attributes][]", phone do |f| -%>
+  <p>
+    <label>Phone</label><br />
+    <%= f.text_field :number, :index => nil %>
+    <%= f.select :label, {"Home" => "home", "Mobile" => "mobile", "Work" => "work", "Fax" => "fax"}, :include_blank => true %>
+
+    <%- if phone.new_record? -%>
+      <%= link_to_function "remove", "this.up('.task').remove()" %>
+    <%- else -%>
+      <%= link_to_function "remove", "mark_for_destroy(this)" %>
+      <%= f.hidden_field :id, :index => nil, :class => 'should_destroy' -%>
+      <%= f.hidden_field :should_destroy, :index => nil, :class => 'should_destroy' -%>
+    <%- end -%>
+  </p>
+<%- end -%>
+</div>
