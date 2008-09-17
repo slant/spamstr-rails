@@ -56,6 +56,11 @@ body {
   padding: 1px 15px;
   }
 
+#footer {
+  background: url('/images/footer.jpg') repeat-x;
+  height: 20px;
+  }
+
 
 
 /****************/
