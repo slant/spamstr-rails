@@ -25,6 +25,7 @@ class PeopleController < ApplicationController
   # GET /people/new.xml
   def new
     @person = Person.new
+    3.times { @person.phones.build }
 
     respond_to do |format|
       format.html # new.html.erb

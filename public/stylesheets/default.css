@@ -191,9 +191,35 @@ a:hover {
 
 
 
-/*****************/
+/******************/
 /*  Flash styles  */
-/*****************/
+/******************/
+
+div#form_container {
+  background: #EAEAEA;
+  border: 1px solid #909090;
+  width: 600px;
+  margin: 15px 0;
+  padding: 0 15px;
+  }
+
+div#form_left {
+  float: left;
+  }
+
+div#form_right {
+  float: left;
+  margin-left: 20px;
+  }
+
+div#controls {
+  clear: both;
+  }
+
+
+/******************/
+/*  Flash styles  */
+/******************/
 
 p.flash_notice,
 p.flash_error {

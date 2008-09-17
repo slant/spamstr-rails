@@ -1,36 +1,48 @@
-<h1>Editing person</h1>
-
 <% form_for(@person) do |f| %>
   <%= f.error_messages %>
 
-  <p>
-    <%= f.label :first_name %><br />
-    <%= f.text_field :first_name %>
-  </p>
-  <p>
-    <%= f.label :last_name %><br />
-    <%= f.text_field :last_name %>
-  </p>
-  <p>
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </p>
-  <p>
-    <%= f.label :company_url %><br />
-    <%= f.text_field :company_url %>
-  </p>
-  <p>
-    <%= f.label :company %><br />
-    <%= f.text_field :company %>
-  </p>
-  <p>
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </p>
-  <p>
-    <%= f.submit "Update" %>
-  </p>
-<% end %>
+<div id="form_container" class="clearfix">
 
-<%= link_to 'Show', @person %> |
-<%= link_to 'Back', people_path %>
+  <div id="form_left">
+    <p>
+      <%= f.label :first_name %><br />
+      <%= f.text_field :first_name %>
+    </p>
+    <p>
+      <%= f.label :last_name %><br />
+      <%= f.text_field :last_name %>
+    </p>
+    <p>
+      <%= f.label :email %><br />
+      <%= f.text_field :email %>
+    </p>
+    <p>
+      <%= f.label :company_url %><br />
+      <%= f.text_field :company_url %>
+    </p>
+    <p>
+      <%= f.label :company %><br />
+      <%= f.text_field :company %>
+    </p>
+    <p>
+      <%= f.label :title %><br />
+      <%= f.text_field :title %>
+    </p>
+  </div>
+
+  <div id="form_right">
+    <div id="phones">
+  <%= render :partial => 'shared/phone', :collection => @person.phones %>
+    </div>
+
+    <%= add_phone_link "Add a phone" %>
+  </div>
+
+</div>
+
+<div id="controls">
+  <p>
+    <%= f.submit "Update" %> <%= link_to 'Back', people_path %>
+  </p>
+</div>
+<% end %>

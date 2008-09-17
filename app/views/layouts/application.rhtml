@@ -21,13 +21,13 @@
             <li><%= link_to 'List People', '/', :class => ('current' if (controller.controller_name == 'people' and controller.action_name == 'index')) %></li>
             <li><%= link_to 'Add a Person', new_person_path, :class => ('current' if (controller.controller_name == 'people' and controller.action_name == 'new')) %></li>
           <%- if controller.controller_name == 'people' and controller.action_name == 'show' or controller.action_name == 'edit' -%>
-            <li><%= link_to(@person.name, person_path(@person), :class => 'current') %></li>
+            <li><%= link_to((controller.action_name == "edit" ? "Editing " : "") + @person.name, person_path(@person), :class => 'current') %></li>
           <%- end -%>
           </ul>
         </div>
       </div>
 
-      <div id="content">
+      <div id="content" class="clearfix">
     <% if !flash.empty? %>
       <% flash.keys.each do |msgtype| %>
         <p class="flash_<%= msgtype.to_s %>"><%= flash[msgtype] %></p>
