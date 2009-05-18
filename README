@@ -1,1 +1,7 @@
 This project is the Rails version of a fake application used in the presentation of the differences between Django and Ruby on Rails at Refresh Denver.
+
+Find the related presentation here:
+http://www.slideshare.net/slant/overview-of-ruby-on-rails-presentation
+
+And the Django implementation of this application here:
+http://github.com/skabber/spamstr-django
